@@ -1,5 +1,5 @@
 /**
- * Vigenere Cipher — Standard 26 alphabet
+ * Vigenere Cipher
  */
 
 export function vigenereEncrypt(plaintext, key) {
