@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
+  --font-display: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: #f0f6ff;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+}
+
+textarea,
+input,
+select {
+  font-family: var(--font-mono);
+}
+
+/* Custom component classes (no @apply — plain CSS for v4 compatibility) */
+.cipher-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-primary-200);
+  background: white;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  outline: none;
+  color: #1e293b;
+}
+.cipher-input::placeholder {
+  color: #94a3b8;
+}
+.cipher-input:focus {
+  ring: 2px solid var(--color-primary-400);
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #60a5fa;
+}
+
+.cipher-textarea {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-primary-200);
+  background: white;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  resize: none;
+  outline: none;
+  color: #1e293b;
+}
+.cipher-textarea::placeholder {
+  color: #94a3b8;
+}
+.cipher-textarea:focus {
+  box-shadow: 0 0 0 2px #60a5fa;
+  border-color: transparent;
+}
+
+.btn-primary {
+  padding: 0.625rem 1.25rem;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+.btn-primary:active {
+  transform: scale(0.95);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  padding: 0.625rem 1.25rem;
+  background-color: white;
+  color: #1d4ed8;
+  border-radius: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.875rem;
+  border: 1px solid #bfdbfe;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.btn-secondary:hover {
+  background-color: #eff6ff;
+}
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
+.result-box {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 2px solid #bfdbfe;
+  background-color: #eff6ff;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  color: #1e3a8a;
+  min-height: 80px;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.label-text {
+  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.375rem;
+  display: block;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Transitions */
+.nav-item-enter-active,
+.nav-item-leave-active {
+  transition: all 0.2s ease;
+}
+.nav-item-enter-from {
+  opacity: 0;
+  transform: translateX(-8px);
+}
